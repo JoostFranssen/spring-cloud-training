@@ -22,6 +22,12 @@ public class HelloEndpoint {
     @Value("${hello.flux.custom:}")
     private String custom;
 
+    @Value("${server.port}")
+    private int port;
+
+    @Value("${spring.application.name}")
+    private String name;
+
     @GetMapping(path = "hello", produces = MediaType.TEXT_EVENT_STREAM_VALUE)
     public Flux<String> streamHello() {
         requestCounter.increment();
@@ -37,5 +43,10 @@ public class HelloEndpoint {
     @GetMapping(path = "custom", produces = MediaType.TEXT_EVENT_STREAM_VALUE)
     public Mono<String> property() {
         return Mono.just(custom);
+    }
+
+    @GetMapping(path = "/", produces = MediaType.TEXT_EVENT_STREAM_VALUE)
+    public Mono<String> info() {
+        return Mono.just(name + ":" + port);
     }
 }
