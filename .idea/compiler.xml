@@ -9,11 +9,13 @@
         <module name="hello-world" />
         <module name="world-caller" />
         <module name="hello-flux" />
+        <module name="admin-service" />
       </profile>
     </annotationProcessing>
   </component>
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="admin-service" options="-parameters" />
       <module name="hello-flux" options="-parameters" />
       <module name="hello-world" options="-parameters" />
       <module name="world-caller" options="-parameters" />

@@ -8,6 +8,7 @@
         <option value="$PROJECT_DIR$/hello-world/pom.xml" />
         <option value="$PROJECT_DIR$/world-caller/pom.xml" />
         <option value="$PROJECT_DIR$/hello-flux/pom.xml" />
+        <option value="$PROJECT_DIR$/admin-service/pom.xml" />
       </list>
     </option>
   </component>

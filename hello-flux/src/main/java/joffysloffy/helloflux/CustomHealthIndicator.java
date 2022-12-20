@@ -8,11 +8,10 @@ import reactor.core.publisher.Mono;
 
 @Component
 public class CustomHealthIndicator extends AbstractReactiveHealthIndicator {
-    private boolean up;
+    private boolean up = true;
 
     @Override
     protected Mono<Health> doHealthCheck(Health.Builder builder) {
-        up = !up;
         Health health = builder.status(up ? Status.UP : Status.OUT_OF_SERVICE).build();
         return Mono.just(health);
     }
