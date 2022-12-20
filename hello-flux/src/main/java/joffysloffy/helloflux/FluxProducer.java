@@ -11,7 +11,7 @@ import java.time.temporal.ChronoUnit;
 public class FluxProducer {
     public Flux<String> produce() {
         return Flux.interval(Duration.of(1, ChronoUnit.SECONDS))
-                .map(d -> "Flux emitted at " + LocalDateTime.now());
+                .map(d -> "Flux emitted at " + LocalDateTime.now() + " on " + Thread.currentThread().getName());
     }
 
     public Flux<Book> books() {
