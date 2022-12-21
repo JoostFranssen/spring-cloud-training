@@ -8,14 +8,10 @@
         <version>1.0-SNAPSHOT</version>
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
-    <groupId>joffysloffy</groupId>
     <artifactId>hello-flux</artifactId>
     <version>0.0.1-SNAPSHOT</version>
     <name>hello-flux</name>
     <description>hello-flux</description>
-    <properties>
-        <java.version>17</java.version>
-    </properties>
     <dependencies>
         <dependency>
             <groupId>org.springframework.boot</groupId>

@@ -28,12 +28,17 @@ public class HelloWorldEndpoint {
     public String getInfo() {
         if(random.nextBoolean()) {
             try {
+                log.info("Going to sleep...");
                 Thread.sleep(5000);
+                log.info("Slept for 5s.");
             } catch(InterruptedException ignore) {
+                log.info("Sleep was interrupted!");
                 Thread.currentThread().interrupt();
             }
         }
-        return name + ":" + serverInfo.getPort();
+        String info = name + ":" + serverInfo.getPort();
+        log.info("Return info: " + info);
+        return info;
     }
 
     @GetMapping(path = "hello", produces = MediaType.TEXT_PLAIN_VALUE)
