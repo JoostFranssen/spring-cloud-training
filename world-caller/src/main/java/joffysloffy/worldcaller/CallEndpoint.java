@@ -16,4 +16,9 @@ public class CallEndpoint {
         callService.setGreet(greet);
         return callService.getHello();
     }
+
+    @GetMapping(path = "info", produces = MediaType.TEXT_PLAIN_VALUE)
+    public String getInfo() {
+        return callService.getInfo();
+    }
 }
